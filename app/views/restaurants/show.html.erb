@@ -1,0 +1,14 @@
+<h1>Le restaurant <%= @restaurant.name %></h1>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.phone_number %></p>
+<p><%= @restaurant.category %></p>
+
+<h2>Donne ta review</h2>
+
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating %>
+  <%= f.submit "Donne ta review!", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to "backToRestos", restaurants_path  %>
